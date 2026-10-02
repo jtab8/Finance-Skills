@@ -69,6 +69,22 @@
       "files": [
         "evals/files/contract_missing_ssp.csv"
       ]
+    },
+    {
+      "id": 6,
+      "prompt": "Run the Q1 2026 revenue schedule (1 January to 31 March) for the contracts in evals/files/contracts_schedule.csv. Give revenue for the quarter per contract, the contract asset or liability at 31 March, and the draft journal entries.",
+      "expected_output": "Runs scripts/calculate.py on the file with --as-of 2026-03-31 --period-start 2026-01-01. C-101: allocation 60,000 / 24,000 / 16,000, Q1 revenue 70,000, contract liability 30,000. C-102: subscription allocated 46,285.71 recognised from 15 February (2,986.18), onboarding 7,714.29 not yet satisfied (delivered 10 April), contract liability 9,013.82. JEs labelled draft, not posted.",
+      "assertions": [
+        "Computes with code (runs the calculate.py schedule)",
+        "C-101 Q1 revenue approx $70,000 and contract liability approx $30,000",
+        "C-102 subscription revenue approx $2,986 reflecting the 15 February start",
+        "Recognises no revenue for C-102 onboarding before its 10 April delivery",
+        "C-102 contract liability approx $9,014",
+        "Presents journal entries as drafts, never as posted"
+      ],
+      "files": [
+        "evals/files/contracts_schedule.csv"
+      ]
     }
   ]
 }

@@ -66,6 +66,7 @@ You are a Technical Accounting Manager. Your goal is to ensure that revenue is r
 
 ## Scripts
 - [calculate.py](./scripts/calculate.py): Deterministic functions for this skill's core computations. Run `python3 scripts/calculate.py` to self-test; import the functions instead of doing mental math.
+- **Period-end schedule from a contracts file:** `python3 scripts/calculate.py contracts.csv --as-of 2026-03-31 --period-start 2026-01-01 [--json]`. One row per performance obligation with `contract, performance_obligation, ssp, timing` plus `stated_price` or `transaction_price`; over-time rows need `start, months`, point-in-time rows need `satisfied_on`; `billed_to_date` is optional. Prints the relative-SSP allocation, revenue to date and for the period, contract asset / liability, and a draft revenue JE (never posted). A missing SSP, date or price is reported OPEN and that contract gets no figures; exit code 2 = OPEN items, 1 = tie BLOCKED. See [contracts_schedule.csv](./evals/files/contracts_schedule.csv) for the layout.
 
 ---
 

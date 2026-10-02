@@ -1,0 +1,6 @@
+contract,performance_obligation,stated_price,ssp,timing,start,months,satisfied_on,billed_to_date
+C-101,Software licence,60000,75000,point_in_time,,,2026-01-01,100000
+C-101,12-month support,30000,30000,over_time,2026-01-01,12,,
+C-101,Implementation service,10000,20000,over_time,2026-01-01,12,,
+C-102,Platform subscription 24m,48000,48000,over_time,2026-02-15,24,,12000
+C-102,Onboarding,6000,8000,point_in_time,,,2026-04-10,
