@@ -38,6 +38,7 @@ Complete overview of all FinanceSkills organized by category, complexity, and in
 | [oil-gas-valuation](./skills/oil-gas-valuation) | Valuation | Advanced | IFRS 6, SEC | investment-analysis, aro-computation | Reserve valuation, RBL, asset acquisitions |
 | [insurance-reserving](./skills/insurance-reserving) | Actuarial | Advanced | IFRS 17, SAP | risk-assessment, ecl-computation | Loss reserves, IBNR, reserve adequacy testing |
 | [crypto-accounting](./skills/crypto-accounting) | Compliance | Advanced | Emerging | financial-analysis | Digital asset accounting, DeFi, NFT valuation |
+| [crypto-trading-bot](./skills/crypto-trading-bot) | Investment | Advanced | General | risk-assessment, investment-analysis | Bot backtesting, position sizing, arbitrage cost math, claim audits |
 | [variance-analysis](./skills/variance-analysis) | Manufacturing | Intermediate | Management Accounting | budget-forecast | Cost control, production efficiency, overhead analysis |
 | [earned-value-mgmt](./skills/earned-value-mgmt) | Project Finance | Intermediate | PMI EVM | budget-forecast, variance-analysis | Project cost control, schedule performance, forecasting |
 | **Advanced Analytics** |
@@ -116,6 +117,7 @@ Complete overview of all FinanceSkills organized by category, complexity, and in
 - oil-gas-valuation
 - insurance-reserving
 - crypto-accounting
+- crypto-trading-bot
 - nlp-earnings-sentiment
 - predictive-burn-rate
 
@@ -167,7 +169,8 @@ Level 5: Emerging & Advanced Analytics
 ├── ai-anomaly-detection [requires: financial-analysis]
 ├── nlp-earnings-sentiment [requires: financial-analysis]
 ├── predictive-burn-rate [requires: budget-forecast, treasury-management]
-└── crypto-accounting [requires: financial-analysis]
+├── crypto-accounting [requires: financial-analysis]
+└── crypto-trading-bot [requires: risk-assessment, investment-analysis]
 ```
 
 ## Skills by Use Case

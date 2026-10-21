@@ -1,0 +1,60 @@
+{
+  "skill_name": "crypto-trading-bot",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "A post says a 19-year-old turned $68 into $750,000 with a Claude Code trading bot that does cross-exchange BTC arbitrage, making $6,732 on the first night. Assume it took 30 days at 50 trades per day. Is this possible? Show the math.",
+      "expected_output": "Total multiple 11,029x; first night is 100x (+9,900%) in one session; implied daily return about 36.4%; implied net return per trade about 0.62% on 1,500 trades versus a 0.24% round-trip cost, i.e. about 0.86% gross captured on every trade with no losers. Cross-venue BTC gaps are typically under 0.05% against a breakeven gap near 0.7% for small size. Verdict: arithmetically impossible; the post is an engagement-bait funnel (follow/like/repost/comment for DM, 24 hours only, AI-generated image).",
+      "assertions": [
+        "Computes the total multiple (approx 11,029x) and the implied daily return (approx 36% per day)",
+        "Computes the required net return per trade (approx 0.6%) and compares it with round-trip trading costs",
+        "States clearly that the claim is not possible on liquid markets",
+        "Identifies the engagement-bait pattern (follow, like, repost, comment for DM)",
+        "Computes with code rather than estimating"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "BTC asks 100,000 on Binance and bids 100,150 on Kraken. Binance taker fee 0.10%, Kraken taker fee 0.26%, 2 bps slippage per side, $5 withdrawal cost, trade size $1,000. What is my net edge, and what gap would I need to break even?",
+      "expected_output": "Gross edge 0.15%. Net edge = 0.15% - 0.10% - 0.26% - 0.04% - 0.50% = -0.75%, a loss of about $7.50 on $1,000. Breakeven gap is 0.90%. No trade.",
+      "assertions": [
+        "Gross edge 0.15%",
+        "Net edge approximately -0.75% (loss of about $7.50)",
+        "Breakeven gap approximately 0.90%",
+        "Concludes the trade should not be taken",
+        "Uses arbitrage_net_edge / breakeven_price_gap or equivalent code"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Backtest the skill's default trend-following strategy on the attached daily bars (evals/files/btc_daily_mock.csv) with $1,000 starting equity, 1% risk per trade, 0.10% taker fee and 2 bps slippage. Compare against buy-and-hold and tell me whether the bot is 'winning'.",
+      "expected_output": "Strategy: end equity about $1,112.53 (+11.3%), CAGR about +5.5%, max drawdown about 3.3%, Sharpe about 1.23, 26 trades, 50% win rate, profit factor about 2.42. Buy-and-hold: +118.3% with an 82.1% max drawdown and Sharpe about 1.00. Honest framing: the bot trades most of the upside for a 25x smaller drawdown; it wins on risk-adjusted terms and loses on raw return. Backtest is hypothetical.",
+      "assertions": [
+        "Strategy total return approx +11% with 26 trades",
+        "Strategy max drawdown approx 3.3% versus buy-and-hold approx 82%",
+        "Buy-and-hold total return approx +118%",
+        "Presents strategy versus buy-and-hold side by side and frames the result in risk-adjusted terms rather than claiming a 'winning' bot",
+        "Includes a hypothetical-results / not-investment-advice caveat",
+        "Runs the backtest with code (scripts/bot.py or calculate.py)"
+      ],
+      "files": [
+        "evals/files/btc_daily_mock.csv"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "My bot wins 55% of the time with a 1:1 payoff. I want to risk 10% of my account per trade to get rich faster. Starting equity $5,000, entry 60,000, stop 58,800. What should my position size be and what is my risk of halving the account?",
+      "expected_output": "Full Kelly is 10%, so quarter-Kelly is 2.5%; 10% per trade is full Kelly and far too aggressive. At 10% risk the probability of a 50% drawdown is about 27%; at 2% it is roughly 0.1%. At 1% risk, size = 5000 x 0.01 / 1200 = 0.0417 units (about $2,500 notional). Recommend 1-2% risk per trade.",
+      "assertions": [
+        "Computes Kelly fraction 10% and recommends a fractional (quarter) Kelly or 1-2% risk",
+        "Computes risk of ruin at 10% risk (approx 27%) and shows it collapses at 1-2%",
+        "Computes position size approx 0.0417 units at 1% risk (or the equivalent at the chosen risk)",
+        "Explicitly advises against 10% per trade",
+        "Computes with code"
+      ],
+      "files": []
+    }
+  ]
+}

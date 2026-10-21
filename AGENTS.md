@@ -49,7 +49,7 @@ financeskills/
 - `python3 tools/evals/run_evals.py --all` - full regression run; reports land in `tools/evals/results/`
 - Eval `files` entries are paths relative to the skill directory (fixtures live in `evals/files/`)
 
-**Scripts** (`skills/*/scripts/calculate.py`): 38 of 43 skills ship deterministic calculators with self-tests. Always import these for computations instead of doing mental math - per CLAUDE.md, calculations must be verified with code. The 5 skills without scripts (audit-checklist, sox-compliance, close-management, esg-reporting, nlp-earnings-sentiment) are judgment-based by design.
+**Scripts** (`skills/*/scripts/calculate.py`): 39 of 44 skills ship deterministic calculators with self-tests. Always import these for computations instead of doing mental math - per CLAUDE.md, calculations must be verified with code. The 5 skills without scripts (audit-checklist, sox-compliance, close-management, esg-reporting, nlp-earnings-sentiment) are judgment-based by design.
 
 **Standards summaries** (`standards/`) carry an `as_of` date and a verification footer. Treat them as orientation, not authority - verify against the issuing body's current text for decision-grade output.
 

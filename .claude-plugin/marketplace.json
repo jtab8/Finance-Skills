@@ -5,7 +5,7 @@
     {
       "id": "finance-skills",
       "name": "Finance Skills",
-      "description": "43 finance skills for AI agents \u2014 accounting operations, financial analysis, tax, audit and SOX, risk, treasury, and corporate finance.",
+      "description": "44 finance skills for AI agents — accounting operations, financial analysis, tax, audit and SOX, risk, treasury, and corporate finance.",
       "author": "KOMVIA",
       "homepage": "https://github.com/GAJETOso/financeskills",
       "repository": "https://github.com/GAJETOso/financeskills",
@@ -22,6 +22,7 @@
         "./skills/corporate-consolidation",
         "./skills/credit-analysis",
         "./skills/crypto-accounting",
+        "./skills/crypto-trading-bot",
         "./skills/cvp-breakeven",
         "./skills/debt-restructuring",
         "./skills/deferred-tax",

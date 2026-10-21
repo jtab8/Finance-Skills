@@ -105,6 +105,7 @@ Skills reference each other and build on shared financial context. Most skills c
 | [oil-gas-valuation](./skills/oil-gas-valuation) | Value oil & gas reserves using NPV of future cash flows, reserve-based lending, and production forecasts... |
 | [insurance-reserving](./skills/insurance-reserving) | Calculate insurance loss reserves, IBNR (Incurred But Not Reported), and actuarial estimates... |
 | [crypto-accounting](./skills/crypto-accounting) | Account for cryptocurrency transactions, digital assets, NFTs, and DeFi protocols under emerging standards... |
+| [crypto-trading-bot](./skills/crypto-trading-bot) | Build, backtest and paper-trade a crypto trading bot with real cost and risk math; audit viral profit claims... |
 | [variance-analysis](./skills/variance-analysis) | Analyze manufacturing cost variances (material, labor, overhead) for production cost control... |
 | [earned-value-mgmt](./skills/earned-value-mgmt) | Track project financial performance using Earned Value Management (EVM) metrics and variance analysis... |
 
@@ -254,6 +255,7 @@ You can also invoke skills directly:
 * `oil-gas-valuation` - Reserve valuation for energy sector
 * `insurance-reserving` - Insurance loss reserves and IBNR
 * `crypto-accounting` - Digital asset accounting
+* `crypto-trading-bot` - Trading bot backtesting, sizing and claim audits
 * `variance-analysis` - Manufacturing cost variance analysis
 * `earned-value-mgmt` - Project financial performance tracking
 
@@ -331,12 +333,12 @@ Windsurf, and any tool reading `.agents/skills/`. In Claude Code, invoke
 explicitly with `/skill-name`.
 
 **Slash commands:** `commands/` ships 52 commands - one per skill (full
-coverage of all 43) plus workflow commands (`/reconcile`, `/wacc`,
+coverage of all 44) plus workflow commands (`/reconcile`, `/wacc`,
 `/close-the-books`, ...) with argument handling.
 
 **MCP connector:** stdio (`tools/mcp/server.py`) or hosted HTTP
 (`tools/mcp/http_server.py` + Dockerfile, see `tools/mcp/DEPLOY.md`) exposing 155+ tools (every calculator
-across 38 skills, plus skill/standards/template readers) to ANY MCP client -
+across 39 skills, plus skill/standards/template readers) to ANY MCP client -
 zero dependencies, no network, no keys. Config snippets in `tools/mcp/README.md`.
 
 **Install as a CLI:** `pipx install git+https://github.com/GAJETOso/financeskills`
@@ -346,7 +348,7 @@ gives `financeskills-mcp`, `financeskills-mcp-http`, `financeskills-validate`,
 **Live data:** `tools/connectors/` pulls Stripe and Plaid transactions into
 skill-ready CSVs (each has a `--mock` mode). See `tools/connectors/README.md`.
 
-**Eval scorecard:** see `tools/evals/BASELINE.md`. All 43 skills have file-based
+**Eval scorecard:** see `tools/evals/BASELINE.md`. All 44 skills have file-based
 evals with realistic fixtures (CSV/XLSX) and code-verified expected values.
 
 **Provenance:** `MANIFEST.sha256` checksums all content; skill scripts are
@@ -358,7 +360,7 @@ Every skill is validated and testable:
 
 - **Validator** - `python3 validate_skills.py` enforces the full Agent Skills spec (frontmatter, evals schema, dead links, line limits), runs every script's self-test, and checks marketplace manifests against the skills on disk. CI runs it on every push.
 - **Eval harness** - `python3 tools/evals/run_evals.py --all` feeds each eval prompt (with its fixture files) to a model with the skill as system context and grades the assertions with an LLM judge. `--dry-run` validates schemas offline.
-- **Deterministic scripts** - 38 of 43 skills ship a `scripts/calculate.py` with self-tested functions, so agents compute with code instead of mental math.
+- **Deterministic scripts** - 39 of 44 skills ship a `scripts/calculate.py` with self-tested functions, so agents compute with code instead of mental math.
 - **Fixtures** - flagship skills include realistic CSV fixtures (trial balances, lease portfolios, bank statements) with code-verified expected answers.
 - **Templates** - flagship skills ship output templates in `assets/` for consistent memos and workpapers.
 
@@ -391,7 +393,7 @@ Connect: [GitHub](https://github.com/GAJETOso)
 ## Roadmap
 
 ### ✅ Completed
-- [x] 43 core financial skills
+- [x] 44 core financial skills
 - [x] IFRS/GAAP compliance mapping
 - [x] Industry-specific skills (oil & gas, banking, insurance)
 - [x] AI agent integration (Claude Code, Cursor)
