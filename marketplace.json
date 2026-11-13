@@ -261,6 +261,12 @@
       "name": "CVP & Breakeven Analysis",
       "path": "skills/cvp-breakeven",
       "category": "Analysis"
+    },
+    {
+      "id": "crypto-trading-bot",
+      "name": "Crypto Trading Bot",
+      "path": "skills/crypto-trading-bot",
+      "category": "Investment"
     }
   ]
 }

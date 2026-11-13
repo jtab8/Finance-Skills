@@ -1,6 +1,6 @@
 # FinanceSkills
 
-> 43 finance skills for AI agents (open Agent Skills spec): deterministic
+> 44 finance skills for AI agents (open Agent Skills spec): deterministic
 > calculators with self-tests, runnable evals with realistic fixtures, an MCP
 > server (155 tools), slash commands, output templates, and a 203-document
 > standards library. MIT licensed. Verify: MANIFEST.sha256.
@@ -9,7 +9,7 @@
 
 - [AGENTS.md](AGENTS.md): how agents should use this repo
 - [tools/mcp/README.md](tools/mcp/README.md): MCP server (stdio + HTTP)
-- [commands/](commands/): 52 slash commands (one per skill + workflows)
+- [commands/](commands/): 53 slash commands (one per skill + workflows)
 - [workflows/month-end-close.md](workflows/month-end-close.md): multi-skill orchestration
 - [tools/connectors/README.md](tools/connectors/README.md): Stripe/Plaid/QuickBooks/Xero/CSV bridges
 - [tools/evals/BASELINE.md](tools/evals/BASELINE.md): eval scorecard
@@ -28,6 +28,7 @@
 - [corporate-consolidation](skills/corporate-consolidation/SKILL.md): When the user wants to consolidate the financial results of multiple legal entities into a single set of statements
 - [credit-analysis](skills/credit-analysis/SKILL.md): When the user wants to assess a borrower's creditworthiness, debt capacity, or covenant compliance
 - [crypto-accounting](skills/crypto-accounting/SKILL.md): When the user wants to account for digital assets (Cryptocurrency, NFTs) in financial statements
+- [crypto-trading-bot](skills/crypto-trading-bot/SKILL.md): When the user wants to build, backtest, paper-trade, or sanity-check an automated crypto trading bot
 - [cvp-breakeven](skills/cvp-breakeven/SKILL.md): When the user wants cost-volume-profit analysis, breakeven points, or operating leverage assessment
 - [debt-restructuring](skills/debt-restructuring/SKILL.md): When the user wants to reorganize an entity's outstanding obligations to restore solvency
 - [deferred-tax](skills/deferred-tax/SKILL.md): When the user wants to compute or review deferred tax under IAS 12 or ASC 740

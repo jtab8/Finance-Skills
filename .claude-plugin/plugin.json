@@ -1,7 +1,7 @@
 {
   "name": "finance-skills",
   "version": "1.0.1",
-  "description": "43 finance skills for AI agents - accounting operations, financial analysis, tax, audit and SOX, risk, treasury, and corporate finance. Includes deterministic calculators, slash commands, output templates, and an MCP server.",
+  "description": "44 finance skills for AI agents - accounting operations, financial analysis, tax, audit and SOX, risk, treasury, and corporate finance. Includes deterministic calculators, slash commands, output templates, and an MCP server.",
   "author": {
     "name": "KOMVIA",
     "email": "support@komvia.com",
