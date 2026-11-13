@@ -34,6 +34,7 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+sys.dont_write_bytecode = True  # keep the validator's no-__pycache__ check green
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import calculate as calc  # noqa: E402
 

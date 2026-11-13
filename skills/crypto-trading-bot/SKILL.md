@@ -133,6 +133,25 @@ environment, never from code or chat.
 
 ---
 
+## Quick Start
+
+Stdlib only, Python 3.10+. Run from `skills/crypto-trading-bot/`.
+
+```bash
+python3 scripts/calculate.py    # self-test: costs, claim audit, ruin, backtest
+python3 scripts/bot.py          # self-test: offline backtest on the fixture
+python3 scripts/bot.py scan --top 50
+python3 scripts/bot.py backtest --csv evals/files/btc_daily_mock.csv --equity 1000
+python3 scripts/bot.py paper --symbol BTCUSDT --interval 1d --state paper.json
+```
+
+| Variable | Used by | Purpose |
+|---|---|---|
+| `BINANCE_API_KEY`, `BINANCE_API_SECRET` | `live` | Signed order placement; never commit them |
+| `I_UNDERSTAND_THE_RISK=1` | `live` | Explicit risk acknowledgement, required with `--live` |
+| `BINANCE_BASE_URL`, `KRAKEN_BASE_URL` | all modes | Override the API hosts (e.g. a testnet) |
+| `TAKER_FEE`, `SLIPPAGE_BPS` | all modes | Cost assumptions (defaults 0.001 and 2 bps) |
+
 ## Scripts
 - [calculate.py](./scripts/calculate.py): Deterministic cost, claim-audit,
   sizing, indicator, backtest and metrics functions with self-tests. Import
